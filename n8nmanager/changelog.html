@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4f46e5">
+
+  <!-- SEO Meta Tags -->
+  <title>更新日誌 - n8nManager</title>
+  <meta name="description" content="n8nManager 更新日誌 - 追蹤每一次進化">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.frankchen.tw/n8nmanager/changelog.html">
+
+  <!-- Icons -->
+  <link rel="icon" href="/n8nmanager/images/icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/n8nmanager/css/styles.css">
+
+  <style>
+    .changelog-content li {
+      display: flex;
+      align-items: start;
+      margin-bottom: 0.75rem;
+    }
+    .changelog-content li::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: rgb(129 140 248);
+      border-radius: 50%;
+      margin-top: 0.5rem;
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="max-w-6xl mx-auto">
+  <div class="min-h-screen bg-gray-100">
+  <!-- Navigation -->
+  <header class="bg-white shadow-sm py-4 px-6 md:px-16 flex justify-between items-center border-b border-slate-200 sticky top-0 z-50 animate-fade-in-up">
+    <a href="/n8nmanager/" class="flex items-center space-x-3">
+      <img src="/n8nmanager/images/icon.png" alt="n8nManager App Icon" width="32" height="32" class="rounded-lg">
+      <div class="text-2xl font-bold text-slate-900">n8nManager</div>
+    </a>
+    <nav class="hidden md:flex space-x-8 items-center" aria-label="主導航">
+      <a href="/n8nmanager/privacy.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors inline-block">
+        隱私權政策
+      </a>
+      <a href="/n8nmanager/#download" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-2.5 rounded-lg transition-colors hover-scale-sm">
+        Try n8nManager
+      </a>
+    </nav>
+    <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 relative z-50" aria-label="開啟選單" aria-expanded="false">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden hidden"></div>
+
+  <!-- Mobile Menu Panel -->
+  <div id="mobile-menu-panel" class="fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-white shadow-2xl z-40 md:hidden transform translate-x-full transition-transform duration-300">
+    <nav class="flex flex-col h-full pt-20 px-6" aria-label="移動端導航">
+      <div class="flex flex-col space-y-2">
+        <a href="/n8nmanager/privacy.html" class="text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 font-semibold py-4 px-4 rounded-lg transition-colors block">
+          <span class="text-base">隱私權政策</span>
+        </a>
+        <a href="/n8nmanager/#download" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-4 rounded-lg transition-colors block text-center">
+          <span class="text-base">Try it</span>
+        </a>
+      </div>
+
+      <div class="mt-auto mb-8 pt-8 border-t border-slate-200">
+        <div class="flex items-center space-x-3 px-4">
+          <img src="/n8nmanager/images/icon.png" alt="n8nManager" width="40" height="40" class="rounded-lg">
+          <div>
+            <p class="text-sm font-bold text-slate-800">n8nManager</p>
+            <p class="text-xs text-slate-500">行動工作流程監控</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="py-8 px-4 sm:px-6 md:px-8 animate-fade-in">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+      <h1 class="text-4xl font-bold text-gray-900 text-center mb-4">
+        更新日誌
+      </h1>
+      <p class="text-sm text-gray-500 text-center mb-8">
+        追蹤 n8nManager 的每一次進化
+      </p>
+
+      <!-- Changelog List -->
+      <div class="space-y-4">
+        <!-- Version 0.10.0 -->
+        <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
+          <!-- Accordion Header -->
+          <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4 flex-1">
+                <h2 class="text-2xl font-bold text-indigo-600">v0.10.0</h2>
+                <time class="text-slate-500 text-sm font-medium">2024年9月25日</time>
+              </div>
+              <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
+                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </button>
+
+          <!-- Accordion Content -->
+          <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+            <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
+              <div class="changelog-content space-y-6">
+                <!-- New Features -->
+                <div>
+                  <div class="bg-gradient-to-r from-indigo-50 to-purple-50 -mx-8 px-8 py-3 mb-4">
+                    <h3 class="text-lg font-bold text-indigo-700 m-0">✨ 新增功能 (New Features)</h3>
+                  </div>
+                  <ul class="space-y-3 mb-6 list-none">
+                    <li class="text-slate-700 leading-relaxed">
+                      <strong class="text-slate-900 font-semibold">工作流程詳細資訊：</strong> 新增工作流程詳細資訊頁面，可以查看工作流程的完整設定和執行歷史統計。
+                    </li>
+                    <li class="text-slate-700 leading-relaxed">
+                      <strong class="text-slate-900 font-semibold">深色模式優化：</strong> 全面改進深色模式的視覺體驗，調整色彩對比度，降低長時間使用的眼睛疲勞。
+                    </li>
+                    <li class="text-slate-700 leading-relaxed">
+                      <strong class="text-slate-900 font-semibold">執行記錄搜尋：</strong> 在執行記錄列表中新增關鍵字搜尋功能，可快速找到特定的執行記錄。
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Optimizations -->
+                <div>
+                  <div class="bg-gradient-to-r from-indigo-50 to-purple-50 -mx-8 px-8 py-3 mb-4">
+                    <h3 class="text-lg font-bold text-indigo-700 m-0">🛠️ 優化與改進 (Optimizations & Improvements)</h3>
+                  </div>
+                  <ul class="space-y-3 mb-6 list-none">
+                    <li class="text-slate-700 leading-relaxed">
+                      <strong class="text-slate-900 font-semibold">連線效能優化：</strong> 改善與 n8n 伺服器的連線穩定性，減少連線逾時的發生機率。
+                    </li>
+                    <li class="text-slate-700 leading-relaxed">
+                      <strong class="text-slate-900 font-semibold">記憶體管理：</strong> 優化大量執行記錄的記憶體使用，提升應用程式整體流暢度。
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Bug Fixes -->
+                <div>
+                  <div class="bg-gradient-to-r from-indigo-50 to-purple-50 -mx-8 px-8 py-3 mb-4">
+                    <h3 class="text-lg font-bold text-indigo-700 m-0">🐛 錯誤修復 (Bug Fixes)</h3>
+                  </div>
+                  <ul class="space-y-3 mb-6 list-none">
+                    <li class="text-slate-700 leading-relaxed">修正部分裝置上工作流程狀態顯示不正確的問題。</li>
+                    <li class="text-slate-700 leading-relaxed">修復執行記錄載入時偶發的閃退問題。</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back to Home Button -->
+      <div class="mt-8 text-center">
+        <a href="/n8nmanager/" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition-colors inline-block hover-scale-sm">
+          返回首頁
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-slate-600 py-8 text-center text-sm mt-8">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-slate-500">
+        Copyright &copy; 2025 n8nManager. All rights reserved.
+      </p>
+      <p class="mt-3">
+        <a href="/n8nmanager/privacy.html" class="text-indigo-600 hover:text-indigo-700 font-medium transition-colors">
+          隱私權政策
+        </a>
+      </p>
+    </div>
+  </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="/n8nmanager/js/main.js"></script>
+  <script>
+    // Changelog specific accordion functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const changelogButtons = document.querySelectorAll('.changelog-button');
+
+      changelogButtons.forEach((button) => {
+        button.addEventListener('click', function() {
+          const answer = this.nextElementSibling;
+          const icon = this.querySelector('.changelog-icon');
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+          // Toggle current changelog
+          if (isExpanded) {
+            answer.style.maxHeight = '0';
+            icon.style.transform = 'rotate(0deg)';
+            this.setAttribute('aria-expanded', 'false');
+          } else {
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            icon.style.transform = 'rotate(180deg)';
+            this.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

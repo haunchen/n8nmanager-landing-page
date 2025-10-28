@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4f46e5">
+
+  <!-- SEO Meta Tags -->
+  <title>n8nManager - 行動工作流程監控與自動化掌控</title>
+  <meta name="description" content="下載 n8nManager App，隨時隨地在 Android 和 iOS 裝置上監控、管理並控制您的 n8n 自動化工作流程。提升效率，掌握每一次執行！">
+  <meta name="keywords" content="n8n, 自動化, 工作流程, 行動應用程式, App, 管理工具, 監控, 執行, Android, iOS, n8nManager">
+  <meta name="author" content="法蘭克">
+  <meta name="creator" content="法蘭克">
+  <meta name="publisher" content="法蘭克">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="n8nManager - 行動工作流程監控與自動化掌控">
+  <meta property="og:description" content="下載 n8nManager App，隨時隨地在 Android 和 iOS 裝置上監控、管理並控制您的 n8n 自動化工作流程。提升效率，掌握每一次執行！">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.frankchen.tw/n8nmanager">
+  <meta property="og:image" content="https://www.frankchen.tw/n8nmanager/images/icon.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="n8nManager App 圖示">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="n8nManager">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="n8nManager - 行動工作流程監控與自動化掌控">
+  <meta name="twitter:description" content="下載 n8nManager App，隨時隨地在 Android 和 iOS 裝置上監控、管理並控制您的 n8n 自動化工作流程。提升效率，掌握每一次執行！">
+  <meta name="twitter:image" content="/n8nmanager/images/icon.png">
+  <meta name="twitter:creator" content="@frankchen_tw">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.frankchen.tw/n8nmanager">
+
+  <!-- Icons -->
+  <link rel="icon" href="/n8nmanager/images/icon.png">
+  <link rel="shortcut icon" href="/n8nmanager/images/icon.png">
+  <link rel="apple-touch-icon" href="/n8nmanager/images/icon.png">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="/n8nmanager/manifest.webmanifest">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/n8nmanager/css/styles.css">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "n8nManager",
+    "description": "為 n8n 使用者量身打造的行動應用程式，讓您輕鬆瀏覽、操作並監控所有自動化流程的執行狀態，提高工作效率和響應能力。",
+    "applicationCategory": "BusinessApplication",
+    "applicationSubCategory": "Productivity",
+    "operatingSystem": ["Android", "iOS"],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "downloadUrl": "https://play.google.com/store/apps/details?id=tw.frankchen.n8n_management_tool",
+    "author": {
+      "@type": "Person",
+      "name": "法蘭克",
+      "url": "https://blog.frankchen.tw/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "法蘭克",
+      "url": "https://blog.frankchen.tw/"
+    },
+    "datePublished": "2024-06-18",
+    "dateModified": "2024-10-02",
+    "version": "1.0.0",
+    "fileSize": "25MB",
+    "contentRating": "Everyone",
+    "inLanguage": "zh-TW",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "ratingCount": "10",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "featureList": [
+      "無縫連接，快速啟動：輕鬆設定您的 n8n 伺服器 URL 和 API Key，App 自動識別網路環境，快速連接並預載數據。首次使用更有貼心引導，確保您順暢上手！",
+      "工作流程全面掌控：直觀瀏覽所有工作流程的名稱與啟用狀態，支援即時搜尋與篩選，並可在詳情頁面輕鬆啟動、關閉或刪除任何工作流程。",
+      "精準監控執行狀況：查看所有工作流程的執行記錄，包含狀態、時間、相關流程名稱及錯誤訊息，支援智慧篩選和深度分析。",
+      "Dashboard 數據總覽：儀表板概覽總執行次數、工作流程數量與使用者數量，提供視覺化報告和執行趨勢分析。",
+      "安全審計，風險預警：獲取 n8n 伺服器的安全審計報告，即時識別潛在風險，提供詳細建議並支援即時翻譯。"
+    ],
+    "requirements": "Android 5.0+ 或 iOS 12.0+",
+    "screenshot": [
+      {
+        "@type": "ImageObject",
+        "url": "https://www.frankchen.tw/n8nmanager/images/icon.png",
+        "description": "n8nManager 應用程式截圖"
+      }
+    ],
+    "url": "https://www.frankchen.tw/n8nmanager",
+    "sameAs": ["https://play.google.com/store/apps/details?id=tw.frankchen.n8n_management_tool"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "法蘭克",
+    "url": "https://blog.frankchen.tw/",
+    "logo": "https://www.frankchen.tw/n8nmanager/images/icon.png",
+    "sameAs": [
+      "https://blog.frankchen.tw/",
+      "https://www.frankchen.tw/n8nmanager"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Developer",
+      "url": "https://blog.frankchen.tw/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://www.frankchen.tw/n8nmanager"
+    }]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "這個 App 支援哪些作業系統？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "我們的 n8nManager 是一個基於 Flutter 框架開發的跨平台應用程式，支援 Android 和 iOS 裝置。"
+      }
+    }, {
+      "@type": "Question",
+      "name": "我需要具備哪些條件才能使用這個 App？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "您需要擁有一個正在運行的 n8n 伺服器，並且有其 URL (外部或內部) 和 API Key。App 首次啟動時會有引導設定流程。"
+      }
+    }, {
+      "@type": "Question",
+      "name": "我的 n8n API Key 安全嗎？App 會將我的數據上傳到雲端嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "您的 n8n API Key 會使用 flutter_secure_storage 進行加密儲存在您的裝置上，確保敏感資訊安全無虞。此外，本應用程式不會將您的任何資訊或從 n8n 伺服器獲取的數據上傳到任何雲端服務或第三方伺服器，所有數據處理和儲存均發生在您的本地裝置上。"
+      }
+    }, {
+      "@type": "Question",
+      "name": "如果我的網路不穩定，App 還能正常運作嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "App 內建了重試機制，以應對不穩定的網路環境，確保連接的可靠性。"
+      }
+    }, {
+      "@type": "Question",
+      "name": "App 支援多語言嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "是的，應用程式介面完全本地化，支援繁體中文、簡體中文和英文。"
+      }
+    }]
+  }
+  </script>
+</head>
+<body class="max-w-6xl mx-auto">
+  <!-- Navigation -->
+  <header class="bg-white shadow-sm py-4 px-6 md:px-16 flex justify-between items-center border-b border-slate-200 sticky top-0 z-50 animate-fade-in-up">
+    <a href="/n8nmanager/" class="flex items-center space-x-3">
+      <img src="/n8nmanager/images/icon.png" alt="n8nManager App Icon" width="32" height="32" class="rounded-lg">
+      <div class="text-2xl font-bold text-slate-900">n8nManager</div>
+    </a>
+    <nav class="hidden md:flex space-x-8 items-center" aria-label="主導航">
+      <a href="/n8nmanager/privacy.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors inline-block">
+        隱私權政策
+      </a>
+      <a href="/n8nmanager/#download" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-2.5 rounded-lg transition-colors hover-scale-sm">
+        Try n8nManager
+      </a>
+    </nav>
+    <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 relative z-50" aria-label="開啟選單" aria-expanded="false">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden hidden"></div>
+
+  <!-- Mobile Menu Panel -->
+  <div id="mobile-menu-panel" class="fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-white shadow-2xl z-40 md:hidden transform translate-x-full transition-transform duration-300">
+    <nav class="flex flex-col h-full pt-20 px-6" aria-label="移動端導航">
+      <div class="flex flex-col space-y-2">
+        <a href="/n8nmanager/privacy.html" class="text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 font-semibold py-4 px-4 rounded-lg transition-colors block">
+          <span class="text-base">隱私權政策</span>
+        </a>
+        <a href="/n8nmanager/#download" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-4 rounded-lg transition-colors block text-center">
+          <span class="text-base">Try it</span>
+        </a>
+      </div>
+
+      <div class="mt-auto mb-8 pt-8 border-t border-slate-200">
+        <div class="flex items-center space-x-3 px-4">
+          <img src="/n8nmanager/images/icon.png" alt="n8nManager" width="40" height="40" class="rounded-lg">
+          <div>
+            <p class="text-sm font-bold text-slate-800">n8nManager</p>
+            <p class="text-xs text-slate-500">行動工作流程監控</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-indigo-600 to-purple-600 text-white text-center py-16 px-6 md:py-24 md:px-16 rounded-2xl my-4 shadow-xl animate-fade-in">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 tracking-tight">
+        隨時隨地，<br>掌控您的 n8n 自動化工作流程
+      </h1>
+      <p class="text-lg md:text-xl opacity-95 mb-10 leading-relaxed">
+        為 n8n 使用者量身打造的行動應用程式，讓您輕鬆瀏覽、操作並監控所有自動化流程的執行狀態，提高工作效率和響應能力。
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+        <a href="#download" class="bg-white text-indigo-600 font-bold py-3 px-10 rounded-full shadow-lg hover:bg-slate-50 transition-colors cursor-pointer inline-block hover-scale smooth-scroll">
+          立即下載 (免費)
+        </a>
+        <a href="#features" class="bg-transparent border-2 border-white text-white font-bold py-3 px-10 rounded-full hover:bg-white hover:text-indigo-600 transition-colors cursor-pointer inline-block hover-scale-sm smooth-scroll">
+          了解更多功能
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-16 px-6 md:py-24 md:px-16 bg-white rounded-2xl my-4 fade-in-section" aria-labelledby="features-heading">
+    <div class="max-w-6xl mx-auto">
+      <h2 id="features-heading" class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">核心功能一覽</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl shadow-sm transform transition duration-300 cursor-pointer hover-scale-sm">
+          <div class="flex items-center justify-center w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M18 10h4M2 10h4M12 2a8 8 0 00-8 8v7h16v-7a8 8 0 00-8-8z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-slate-800">無縫連接，快速啟動</h3>
+          <p class="text-slate-600 leading-relaxed">輕鬆設定伺服器 URL 和 API Key，自動識別網路環境並快速連接。首次使用有貼心引導，確保順暢上手。</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl shadow-sm transform transition duration-300 cursor-pointer hover-scale-sm">
+          <div class="flex items-center justify-center w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-slate-800">工作流程全面掌控</h3>
+          <p class="text-slate-600 leading-relaxed">一覽所有工作流程的狀態，支援即時搜尋與篩選。可直接啟動、關閉或刪除流程，重要操作前有確認提示防止誤觸。</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl shadow-sm transform transition duration-300 cursor-pointer hover-scale-sm">
+          <div class="flex items-center justify-center w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-slate-800">精準監控執行狀況</h3>
+          <p class="text-slate-600 leading-relaxed">查看所有執行記錄，包含狀態、時間及錯誤訊息。支援智慧篩選與搜尋，可深入檢視執行詳情與節點數據，高效除錯。</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl shadow-sm transform transition duration-300 cursor-pointer hover-scale-sm">
+          <div class="flex items-center justify-center w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-slate-800">Dashboard 數據總覽</h3>
+          <p class="text-slate-600 leading-relaxed">一目瞭然掌握總執行次數、工作流程數量與使用者數量。圓餅圖與條形圖視覺化呈現執行趨勢與成功率。</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl shadow-sm transform transition duration-300 cursor-pointer hover-scale-sm">
+          <div class="flex items-center justify-center w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm0-11V9a2 2 0 012-2h4a2 2 0 012 2v2M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-slate-800">安全審計，風險預警</h3>
+          <p class="text-slate-600 leading-relaxed">獲取伺服器安全審計報告，即時識別並高亮顯示潛在風險。詳細的報告說明與建議，並支援即時翻譯。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="py-16 px-6 md:py-24 md:px-16 bg-slate-50 rounded-2xl my-4 fade-in-section" aria-labelledby="benefits-heading">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 id="benefits-heading" class="text-3xl md:text-4xl font-bold mb-10 text-slate-900">
+        為何選擇 n8nManager？
+      </h2>
+      <div class="space-y-6 text-lg text-slate-700 leading-relaxed">
+        <p>在這個快速變化的時代，自動化是提升效率的關鍵。n8nManager 讓您不再受限於桌面環境，隨時隨地掌控您的自動化核心。</p>
+        <p>無論您身在何處，都能即時獲取工作流程的運行狀態，對異常情況迅速響應，確保業務流程的順暢無阻。</p>
+        <p>直觀的介面設計，讓即使是非技術人員也能輕鬆上手，快速查看和操作關鍵流程，真正實現行動辦公，提高團隊協作效率。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 px-6 md:py-24 md:px-16 bg-white rounded-2xl my-4 fade-in-section">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
+        常見問答 (Q&A)
+      </h2>
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white">
+          <button class="faq-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <span class="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">Q1</span>
+                <h3 class="text-lg font-semibold text-slate-800 leading-relaxed">這個 App 支援哪些作業系統？</h3>
+              </div>
+              <div class="faq-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
+                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </button>
+          <div class="faq-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+            <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6">
+              <p class="text-slate-700 leading-relaxed">我們的 n8nManager 是一個基於 Flutter 框架開發的跨平台應用程式，支援 Android 和 iOS 裝置。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white">
+          <button class="faq-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <span class="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">Q2</span>
+                <h3 class="text-lg font-semibold text-slate-800 leading-relaxed">我需要具備哪些條件才能使用這個 App？</h3>
+              </div>
+              <div class="faq-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
+                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </button>
+          <div class="faq-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+            <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6">
+              <p class="text-slate-700 leading-relaxed">您需要擁有一個正在運行的 n8n 伺服器，並且有其 URL (外部或內部) 和 API Key。App 首次啟動時會有引導設定流程。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white">
+          <button class="faq-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <span class="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">Q3</span>
+                <h3 class="text-lg font-semibold text-slate-800 leading-relaxed">我的 n8n API Key 安全嗎？App 會將我的數據上傳到雲端嗎？</h3>
+              </div>
+              <div class="faq-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
+                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </button>
+          <div class="faq-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+            <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6">
+              <p class="text-slate-700 leading-relaxed">您的 n8n API Key 會使用 flutter_secure_storage 進行加密儲存在您的裝置上，確保敏感資訊安全無虞。此外，本應用程式不會將您的任何資訊或從 n8n 伺服器獲取的數據上傳到任何雲端服務或第三方伺服器，所有數據處理和儲存均發生在您的本地裝置上。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white">
+          <button class="faq-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <span class="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">Q4</span>
+                <h3 class="text-lg font-semibold text-slate-800 leading-relaxed">如果我的網路不穩定，App 還能正常運作嗎？</h3>
+              </div>
+              <div class="faq-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
+                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </button>
+          <div class="faq-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+            <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6">
+              <p class="text-slate-700 leading-relaxed">App 內建了重試機制，以應對不穩定的網路環境，確保連接的可靠性。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 bg-white">
+          <button class="faq-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <span class="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">Q5</span>
+                <h3 class="text-lg font-semibold text-slate-800 leading-relaxed">App 支援多語言嗎？</h3>
+              </div>
+              <div class="faq-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
+                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </button>
+          <div class="faq-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+            <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6">
+              <p class="text-slate-700 leading-relaxed">是的，應用程式介面完全本地化，支援繁體中文、簡體中文和英文。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section id="download" class="py-16 px-6 md:py-24 md:px-16 bg-gradient-to-br from-indigo-600 to-purple-600 text-white text-center rounded-2xl shadow-xl my-4 fade-in-section">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        準備好提升您的 n8n 管理體驗了嗎？
+      </h2>
+      <p class="text-lg md:text-xl opacity-95 mb-10 leading-relaxed">
+        立即下載 n8nManager，將您的自動化工作流程掌控在手中。
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+        <div class="relative inline-block hover-scale-sm">
+          <img src="/n8nmanager/images/app-store-badge.webp" alt="Download on the App Store" width="200" height="60" class="h-14 w-auto opacity-60 cursor-not-allowed">
+          <div class="absolute inset-0 bg-white/20 rounded-lg flex items-center justify-center">
+            <span class="text-white text-sm font-semibold bg-black/50 px-3 py-1 rounded-full">即將推出</span>
+          </div>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=tw.frankchen.n8n_management_tool" target="_blank" rel="noopener noreferrer" class="inline-block hover-scale">
+          <img src="/n8nmanager/images/google-play-badge.png" alt="在 Google Play 上取得" width="200" height="60" class="h-14 w-auto">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-slate-600 py-8 text-center text-sm mt-8 fade-in-section">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-slate-500">
+        Copyright &copy; 2025 n8nManager. All rights reserved.
+      </p>
+      <p class="mt-3">
+        <a href="/n8nmanager/privacy.html" class="text-indigo-600 hover:text-indigo-700 font-medium transition-colors">
+          隱私權政策
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="/n8nmanager/js/main.js"></script>
+</body>
+</html>
