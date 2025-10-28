@@ -24,12 +24,42 @@
   <!-- CSS -->
   <link rel="stylesheet" href="/n8nmanager/css/styles.css">
 
+  <!-- Markdown Parser -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
   <style>
+    /* Markdown 内容样式优化 */
+    .changelog-content h2 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: rgb(67 56 202);
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      padding: 0.75rem 2rem;
+      background: linear-gradient(to right, rgb(238 242 255), rgb(243 232 255));
+      border-radius: 0.5rem;
+      margin-left: -2rem;
+      margin-right: -2rem;
+    }
+
+    .changelog-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .changelog-content ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 1.5rem;
+    }
+
     .changelog-content li {
       display: flex;
       align-items: start;
       margin-bottom: 0.75rem;
+      color: rgb(51 65 85);
+      line-height: 1.6;
     }
+
     .changelog-content li::before {
       content: '';
       display: inline-block;
@@ -40,6 +70,17 @@
       margin-top: 0.5rem;
       margin-right: 0.75rem;
       flex-shrink: 0;
+    }
+
+    .changelog-content strong {
+      font-weight: 600;
+      color: rgb(30 41 59);
+    }
+
+    .changelog-content p {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+      color: rgb(51 65 85);
     }
   </style>
 </head>
@@ -103,76 +144,10 @@
         追蹤 n8nManager 的每一次進化
       </p>
 
-      <!-- Changelog List -->
-      <div class="space-y-4">
-        <!-- Version 0.10.0 -->
-        <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
-          <!-- Accordion Header -->
-          <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-4 flex-1">
-                <h2 class="text-2xl font-bold text-indigo-600">v0.10.0</h2>
-                <time class="text-slate-500 text-sm font-medium">2024年9月25日</time>
-              </div>
-              <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
-            </div>
-          </button>
-
-          <!-- Accordion Content -->
-          <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-            <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
-              <div class="changelog-content space-y-6">
-                <!-- New Features -->
-                <div>
-                  <div class="bg-gradient-to-r from-indigo-50 to-purple-50 -mx-8 px-8 py-3 mb-4">
-                    <h3 class="text-lg font-bold text-indigo-700 m-0">✨ 新增功能 (New Features)</h3>
-                  </div>
-                  <ul class="space-y-3 mb-6 list-none">
-                    <li class="text-slate-700 leading-relaxed">
-                      <strong class="text-slate-900 font-semibold">工作流程詳細資訊：</strong> 新增工作流程詳細資訊頁面，可以查看工作流程的完整設定和執行歷史統計。
-                    </li>
-                    <li class="text-slate-700 leading-relaxed">
-                      <strong class="text-slate-900 font-semibold">深色模式優化：</strong> 全面改進深色模式的視覺體驗，調整色彩對比度，降低長時間使用的眼睛疲勞。
-                    </li>
-                    <li class="text-slate-700 leading-relaxed">
-                      <strong class="text-slate-900 font-semibold">執行記錄搜尋：</strong> 在執行記錄列表中新增關鍵字搜尋功能，可快速找到特定的執行記錄。
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Optimizations -->
-                <div>
-                  <div class="bg-gradient-to-r from-indigo-50 to-purple-50 -mx-8 px-8 py-3 mb-4">
-                    <h3 class="text-lg font-bold text-indigo-700 m-0">🛠️ 優化與改進 (Optimizations & Improvements)</h3>
-                  </div>
-                  <ul class="space-y-3 mb-6 list-none">
-                    <li class="text-slate-700 leading-relaxed">
-                      <strong class="text-slate-900 font-semibold">連線效能優化：</strong> 改善與 n8n 伺服器的連線穩定性，減少連線逾時的發生機率。
-                    </li>
-                    <li class="text-slate-700 leading-relaxed">
-                      <strong class="text-slate-900 font-semibold">記憶體管理：</strong> 優化大量執行記錄的記憶體使用，提升應用程式整體流暢度。
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Bug Fixes -->
-                <div>
-                  <div class="bg-gradient-to-r from-indigo-50 to-purple-50 -mx-8 px-8 py-3 mb-4">
-                    <h3 class="text-lg font-bold text-indigo-700 m-0">🐛 錯誤修復 (Bug Fixes)</h3>
-                  </div>
-                  <ul class="space-y-3 mb-6 list-none">
-                    <li class="text-slate-700 leading-relaxed">修正部分裝置上工作流程狀態顯示不正確的問題。</li>
-                    <li class="text-slate-700 leading-relaxed">修復執行記錄載入時偶發的閃退問題。</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- Changelog List - 动态加载 -->
+      <div id="changelog-list" class="space-y-4">
+        <!-- 内容将由 JavaScript 动态加载 -->
+        <div class="text-center py-8 text-slate-600">正在載入更新日誌...</div>
       </div>
 
       <!-- Back to Home Button -->
@@ -201,30 +176,6 @@
 
   <!-- JavaScript -->
   <script src="/n8nmanager/js/main.js"></script>
-  <script>
-    // Changelog specific accordion functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const changelogButtons = document.querySelectorAll('.changelog-button');
-
-      changelogButtons.forEach((button) => {
-        button.addEventListener('click', function() {
-          const answer = this.nextElementSibling;
-          const icon = this.querySelector('.changelog-icon');
-          const isExpanded = this.getAttribute('aria-expanded') === 'true';
-
-          // Toggle current changelog
-          if (isExpanded) {
-            answer.style.maxHeight = '0';
-            icon.style.transform = 'rotate(0deg)';
-            this.setAttribute('aria-expanded', 'false');
-          } else {
-            answer.style.maxHeight = answer.scrollHeight + 'px';
-            icon.style.transform = 'rotate(180deg)';
-            this.setAttribute('aria-expanded', 'true');
-          }
-        });
-      });
-    });
-  </script>
+  <script src="/n8nmanager/js/changelog-loader.js"></script>
 </body>
 </html>

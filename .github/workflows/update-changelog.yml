@@ -1,0 +1,48 @@
+name: Update Changelog Index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'n8nmanager/changelogs/*.md'
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate changelog index
+        run: |
+          python3 scripts/generate-changelog-index.py
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet n8nmanager/changelogs/index.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add n8nmanager/changelogs/index.json
+          git commit -m "chore: auto-update changelog index ($(date '+%Y-%m-%d')) [skip ci]"
+          git push
