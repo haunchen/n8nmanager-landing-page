@@ -25,9 +25,13 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Generate changelog index
+      - name: Install Python dependencies
         run: |
-          python3 scripts/generate-changelog-index.py
+          pip install markdown
+
+      - name: Generate changelog HTML
+        run: |
+          python3 scripts/generate-changelog-html.py
 
       - name: Update sitemap
         run: |
@@ -36,7 +40,7 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          if git diff --quiet n8nmanager/changelogs/index.json n8nmanager/sitemap.xml; then
+          if git diff --quiet n8nmanager/changelog.html n8nmanager/sitemap.xml; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -47,6 +51,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add n8nmanager/changelogs/index.json n8nmanager/sitemap.xml
+          git add n8nmanager/changelog.html n8nmanager/sitemap.xml
           git commit -m "chore: auto-update changelog and sitemap ($(date '+%Y-%m-%d')) [skip ci]"
           git push
