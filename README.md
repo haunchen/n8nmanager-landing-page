@@ -1,164 +1,29 @@
-# n8nManager Landing Page - 純 HTML 版本
+![Static Badge](https://img.shields.io/badge/Website-0f172a?style=plastic&logoSize=amg&link=https%3A%2F%2Fwww.frankchen.tw%2Fn8nmanager)
+![Update Changelog Index](https://github.com/haunchen/n8nmanager-landing-page/actions/workflows/update-changelog.yml/badge.svg)
+![Update Homepage Sitemap](https://github.com/haunchen/n8nmanager-landing-page/actions/workflows/update-homepage.yml/badge.svg)
 
-這是 n8n-management-tool-landing-page 的純 HTML + CSS + JavaScript 版本，專為部署在 `/n8nmanager/` 子目錄設計。
+# n8nManager Landing Page
 
-## 目錄結構
+n8nManager 產品的官方 Landing Page，這是一個專為 n8n 工作流程管理而設計的行動應用程式展示網站。
 
-```
-n8nmanager/
-├── index.html          # 首頁（Landing Page）
-├── privacy.html        # 隱私權政策頁面
-├── changelog.html      # 更新日誌頁面
-├── css/
-│   └── styles.css      # 編譯後的完整 CSS（Tailwind + 自定義樣式）
-├── js/
-│   └── main.js         # 所有交互功能的 JavaScript
-└── images/             # 圖片資源
-    ├── icon.png
-    ├── app-store-badge.webp
-    └── google-play-badge.png
-```
+## 關於 n8nManager
 
-## 功能特點
+n8nManager 是一款免費的行動應用程式，讓您可以在手機上輕鬆管理 n8n 工作流程。應用程式提供以下核心功能：
 
-### 1. 完整保留的功能
-- 響應式設計（桌面版 + 行動版）
-- 行動版側邊欄選單（滑動動畫）
-- FAQ 展開/收合功能
-- 平滑滾動（Smooth Scroll）
-- Intersection Observer 滾動淡入動畫
-- 完整的 SEO 優化（Meta 標籤 + Schema.org 結構化數據）
-- 下載按鈕（Google Play 可點擊，App Store 顯示即將推出）
+1. 無縫連接、快速啟動：自動識別網路環境、快速連接並預載數據，首次使用有引導流程
+2. 工作流程全面掌控：直觀瀏覽、即時搜尋與篩選，可啟動、關閉或刪除工作流程
+3. 精準監控執行狀況：查看執行記錄包括狀態、時間、流程名稱和錯誤訊息，支援智慧篩選
+4. Dashboard 數據總覽：視覺化儀表板展示總執行次數、工作流程數量、使用者數量及趨勢分析
+5. 安全審計、風險預警：獲取伺服器安全審計報告、識別潛在風險並提供詳細建議
+6. 執行記錄管理：批量刪除、單獨刪除、時間篩選功能
 
-### 2. 技術實作
-- 純 HTML5 + CSS3 + ES6 JavaScript
-- Tailwind CSS（編譯版本）
-- 原生 Intersection Observer API
-- CSS transitions 和 animations
-- 無框架依賴
-
-### 3. 頁面說明
-
-#### index.html（首頁）
-包含以下區塊：
-- Navigation（導航欄）
-- Hero Section（英雄區）
-- Features Section（6 個核心功能）
-- Benefits Section（優勢說明）
-- FAQ Section（5 個常見問答）
-- Download Section（下載按鈕）
-- Footer（頁尾）
-
-#### privacy.html（隱私政策）
-包含完整的隱私權政策內容，共 9 個主要章節。
-
-#### changelog.html（更新日誌）
-包含 v0.10.0 版本的更新內容，支援展開/收合功能。
-
-## 部署說明
-
-### 1. 直接部署到靜態主機
-將整個 `n8nmanager` 資料夾上傳到您的網站根目錄下的 `/n8nmanager/` 位置。
-
-例如：
-```
-your-website.com/
-└── n8nmanager/
-    ├── index.html
-    ├── privacy.html
-    ├── changelog.html
-    ├── css/
-    ├── js/
-    └── images/
-```
-
-訪問網址：
-- 首頁：`https://your-website.com/n8nmanager/`
-- 隱私政策：`https://your-website.com/n8nmanager/privacy.html`
-- 更新日誌：`https://your-website.com/n8nmanager/changelog.html`
-
-### 2. 本地測試
-使用任何靜態檔案伺服器進行本地測試：
-
-#### 方法 1：使用 Python
-```bash
-cd n8nmanager
-python3 -m http.server 8000
-```
-然後訪問：`http://localhost:8000/`
-
-#### 方法 2：使用 Node.js (http-server)
-```bash
-npx http-server n8nmanager -p 8000
-```
-然後訪問：`http://localhost:8000/`
-
-#### 方法 3：使用 VS Code Live Server
-安裝 Live Server 擴展，右鍵點擊 `index.html` 選擇「Open with Live Server」。
-
-### 3. 路徑說明
-所有資源路徑都使用 `/n8nmanager/` 前綴：
-- CSS：`/n8nmanager/css/styles.css`
-- JS：`/n8nmanager/js/main.js`
-- Images：`/n8nmanager/images/*`
-
-如果您需要部署到不同的子目錄，請搜索並替換所有 `/n8nmanager/` 路徑。
-
-## 瀏覽器兼容性
-
-支援所有現代瀏覽器：
-- Chrome 60+
-- Firefox 55+
-- Safari 11+
-- Edge 79+
-- iOS Safari 11+
-- Chrome for Android 60+
-
-主要使用的現代特性：
-- CSS Grid 和 Flexbox
-- CSS Custom Properties（CSS 變數）
-- Intersection Observer API
-- ES6 Arrow Functions 和 Template Literals
-
-## 自定義說明
-
-### 修改顏色
-編輯 `css/styles.css`，搜索以下 CSS 變數：
-- `--indigo-600`：主要品牌顏色
-- `--purple-600`：次要品牌顏色
-- `--slate-*`：灰階顏色
-
-### 修改內容
-直接編輯對應的 HTML 檔案即可。
-
-### 添加新頁面
-1. 複製 `privacy.html` 作為模板
-2. 修改內容區域
-3. 更新導航連結
-
-## 性能優化
-
-已實作的優化：
-1. CSS 已壓縮（minified）
-2. 使用 WebP 格式圖片（App Store badge）
-3. 圖片已優化大小
-4. 使用 Intersection Observer 延遲載入動畫
-5. 字體使用 Google Fonts CDN
-
-## 維護建議
-
-1. 定期檢查所有外部連結是否有效
-2. 更新 Google Play 連結（如有變動）
-3. 添加新的更新日誌條目時，參考 `changelog.html` 的結構
-4. 保持 Schema.org 結構化數據的更新
+<a href="https://play.google.com/store/apps/details?id=tw.frankchen.n8n_management_tool">
+  <img alt="在 Google Play 上取得" src="https://play.google.com/intl/en_us/badges/static/images/badges/zh-tw_badge_web_generic.png" height="60"/>
+</a>
 
 ## 聯絡資訊
 
 如有問題，請聯絡：
-- Email：services@mail.frankchen.tw
-- 部落格：https://blog.frankchen.tw/
-
----
-
-轉換完成日期：2025 年 10 月 28 日
-原始專案：n8n-management-tool-landing-page (Next.js 15)
+- Threads：[@frankchen.tw](https://www.threads.com/@frankchen.tw)
+- Email：frank@frankchen.tw
+- 部落格：https://www.frankchen.tw/
