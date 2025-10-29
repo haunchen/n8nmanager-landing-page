@@ -54,14 +54,16 @@ def process_markdown_file(filepath):
 
         version = metadata.get('version', '')
         date = metadata.get('date', '')
+        title = metadata.get('title', '')
 
-        if not version or not date:
-            print(f"  ⚠ {filepath.name}: 缺少 version 或 date")
+        if not version or not date or not title:
+            print(f"  ⚠ {filepath.name}: 缺少 version、date 或 title")
             return None
 
         return {
             'version': version,
             'date': date,
+            'title': title,
             'file': filepath.name
         }
 

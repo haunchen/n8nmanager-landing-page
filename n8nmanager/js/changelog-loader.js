@@ -106,15 +106,23 @@ class ChangelogLoader {
   async generateChangelogHtml(changelogData, markdownContent) {
     const html = await this.markdownToHtml(markdownContent);
     const formattedDate = this.formatDate(changelogData.date);
+    const title = changelogData.title || `v${changelogData.version}`;
 
     return `
       <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
         <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-4 flex-1">
-              <h2 class="text-2xl font-bold text-indigo-600">v${changelogData.version}</h2>
-              <time class="text-slate-500 text-sm font-medium">${formattedDate}</time>
+            <div class="flex flex-col gap-5 flex-1">
+              <div class="flex items-center gap-2">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
+                  v${changelogData.version}
+                </span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
+                  ${formattedDate}
+                </span>
+              </div>
+              <h2 class="text-2xl font-bold text-slate-800">${title}</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
               <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
