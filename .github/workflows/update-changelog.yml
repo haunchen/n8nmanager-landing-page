@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'n8nmanager/changelogs/*.md'
+      - 'changelogs/*.md'
 
 jobs:
   update-changelog:

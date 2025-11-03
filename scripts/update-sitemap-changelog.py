@@ -120,7 +120,7 @@ def main():
 
     # 路徑配置
     script_dir = Path(__file__).parent.parent
-    changelogs_dir = script_dir / 'n8nmanager' / 'changelogs'
+    changelogs_dir = script_dir / 'changelogs'
     sitemap_file = script_dir / 'n8nmanager' / 'sitemap.xml'
 
     # 檢查文件

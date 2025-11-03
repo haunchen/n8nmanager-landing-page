@@ -137,7 +137,7 @@ def main():
 
     # 路徑配置
     script_dir = Path(__file__).parent.parent
-    changelogs_dir = script_dir / 'n8nmanager' / 'changelogs'
+    changelogs_dir = script_dir / 'changelogs'
     template_file = script_dir / 'templates' / 'changelog.template.html'
     output_file = script_dir / 'n8nmanager' / 'changelog.html'
 

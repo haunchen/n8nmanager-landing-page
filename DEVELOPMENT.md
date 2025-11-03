@@ -7,9 +7,6 @@ n8nmanager/
 ├── index.html          # 首頁（Landing Page）
 ├── privacy.html        # 隱私權政策頁面
 ├── changelog.html      # 更新日誌頁面
-├── changelogs/         # 更新日誌 Markdown 檔案
-│   ├── index.json      # 自動生成的更新日誌索引
-│   └── *.md           # 各版本更新日誌
 ├── css/
 │   └── styles.css      # 編譯後的完整 CSS（Tailwind + 自定義樣式）
 ├── js/
@@ -17,6 +14,10 @@ n8nmanager/
 │   └── changelog-loader.js  # 更新日誌載入器
 ├── images/             # 圖片資源
 └── sitemap.xml         # 網站地圖（自動生成）
+
+changelogs/             # 更新日誌 Markdown 檔案
+├── index.json          # 自動生成的更新日誌索引
+└── *.md               # 各版本更新日誌
 ```
 
 ## 技術實作
