@@ -191,4 +191,49 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('beforeunload', function() {
     document.body.style.overflow = 'unset';
   });
+
+  // ==================== 主題切換功能 ====================
+  const html = document.documentElement;
+  const themeToggle = document.getElementById('theme-toggle');
+  const sunIcon = document.getElementById('sun-icon');
+  const moonIcon = document.getElementById('moon-icon');
+
+  // 從 localStorage 讀取已儲存的主題，預設為 dark
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+
+  // 套用儲存的主題
+  html.setAttribute('data-theme', savedTheme);
+  updateThemeIcons(savedTheme);
+
+  // 主題切換按鈕事件
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function() {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+      // 更新 HTML 屬性
+      html.setAttribute('data-theme', newTheme);
+
+      // 儲存到 localStorage
+      localStorage.setItem('theme', newTheme);
+
+      // 更新圖示
+      updateThemeIcons(newTheme);
+    });
+  }
+
+  // 更新主題圖示顯示
+  function updateThemeIcons(theme) {
+    if (!sunIcon || !moonIcon) return;
+
+    if (theme === 'dark') {
+      // 深色模式顯示太陽圖示（點擊後切換到淺色）
+      sunIcon.classList.remove('hidden');
+      moonIcon.classList.add('hidden');
+    } else {
+      // 淺色模式顯示月亮圖示（點擊後切換到深色）
+      sunIcon.classList.add('hidden');
+      moonIcon.classList.remove('hidden');
+    }
+  }
 });
