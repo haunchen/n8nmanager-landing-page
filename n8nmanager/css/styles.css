@@ -68,6 +68,14 @@
     inset 0 -1px 0 rgba(0, 0, 0, 0.15),
     0 8px 32px rgba(0, 0, 0, 0.4);
 }
+
+/* Footer Grid 響應式樣式 */
+@media (min-width: 768px) {
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .md\:gap-12 { gap: 3rem; }
+  .md\:items-start { align-items: flex-start; }
+  .md\:text-left { text-align: left; }
+}
 /* ===== 主題切換功能 ===== */
 
 /* 主題切換過渡效果 */
