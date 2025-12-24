@@ -25,27 +25,18 @@
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
-    /* 版本號 badge 背景色 */
-    .bg-accent-1\/20 { background-color: rgba(0, 132, 255, 0.2); }
-    html[data-theme="light"] .bg-accent-1\/20 { background-color: rgba(79, 70, 229, 0.15); }
-
-    /* Markdown 内容样式优化 - 支援主題切換 */
+    /* Markdown 内容样式优化 */
     .changelog-content h2 {
       font-size: 1.125rem;
       font-weight: 700;
-      color: #0084ff;
+      color: rgb(67 56 202);
       margin-top: 1.5rem;
       margin-bottom: 1rem;
       padding: 0.75rem 2rem;
-      background: linear-gradient(to right, rgba(0, 132, 255, 0.1), rgba(251, 146, 60, 0.1));
+      background: linear-gradient(to right, rgb(238 242 255), rgb(243 232 255));
       border-radius: 0.5rem;
       margin-left: -2rem;
       margin-right: -2rem;
-    }
-
-    html[data-theme="light"] .changelog-content h2 {
-      color: #4f46e5;
-      background: linear-gradient(to right, rgba(79, 70, 229, 0.1), rgba(147, 51, 234, 0.1));
     }
 
     .changelog-content h2:first-child {
@@ -62,12 +53,8 @@
       display: flex;
       align-items: start;
       margin-bottom: 0.75rem;
-      color: #e2e8f0;
+      color: rgb(51 65 85);
       line-height: 1.6;
-    }
-
-    html[data-theme="light"] .changelog-content li {
-      color: #475569;
     }
 
     .changelog-content li::before {
@@ -75,68 +62,45 @@
       display: inline-block;
       width: 6px;
       height: 6px;
-      background-color: #0084ff;
+      background-color: rgb(129 140 248);
       border-radius: 50%;
       margin-top: 0.5rem;
       margin-right: 0.75rem;
       flex-shrink: 0;
     }
 
-    html[data-theme="light"] .changelog-content li::before {
-      background-color: #6366f1;
-    }
-
     .changelog-content strong {
       font-weight: 600;
-      color: #ffffff;
-    }
-
-    html[data-theme="light"] .changelog-content strong {
-      color: #0f172a;
+      color: rgb(30 41 59);
     }
 
     .changelog-content p {
       margin-bottom: 0.75rem;
       line-height: 1.6;
-      color: #e2e8f0;
-    }
-
-    html[data-theme="light"] .changelog-content p {
-      color: #475569;
+      color: rgb(51 65 85);
     }
   </style>
 </head>
 <body class="max-w-6xl mx-auto">
-  <div class="min-h-screen bg-primary">
+  <div class="min-h-screen bg-gray-100">
   <!-- Navigation -->
-  <header class="bg-primary/80 backdrop-blur-sm glass-border py-4 px-6 md:px-16 flex justify-between items-center sticky top-0 z-50 animate-fade-in-up">
-    <a href="index.html" class="flex items-center space-x-3">
+  <header class="bg-white shadow-sm py-4 px-6 md:px-16 flex justify-between items-center border-b border-slate-200 sticky top-0 z-50 animate-fade-in-up">
+    <a href="/" class="flex items-center space-x-3">
       <img src="images/icon.png" alt="n8nManager App Icon" width="32" height="32" class="rounded-lg">
-      <div class="text-2xl font-bold text-light">n8nManager</div>
+      <div class="text-2xl font-bold text-slate-900">n8nManager</div>
     </a>
     <nav class="hidden md:flex space-x-8 items-center" aria-label="主導航">
-      <a href="changelog.html" class="text-gray-medium hover:text-accent-1 font-medium transition-colors inline-block">
+      <a href="changelog.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors inline-block">
         更新日誌
       </a>
-      <a href="privacy.html" class="text-gray-medium hover:text-accent-1 font-medium transition-colors inline-block">
+      <a href="privacy.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors inline-block">
         隱私權政策
       </a>
-      <!-- 主題切換按鈕 -->
-      <button id="theme-toggle" class="p-2 rounded-lg text-gray-medium hover:bg-secondary-1 focus:outline-none focus:ring-2 focus:ring-accent-1 transition-colors" aria-label="切換主題">
-        <!-- 太陽圖示（深色模式顯示） -->
-        <svg id="sun-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-        <!-- 月亮圖示（淺色模式顯示） -->
-        <svg id="moon-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-        </svg>
-      </button>
-      <a href="index.html#download" class="bg-accent-1 hover:bg-accent-2 text-white font-bold px-6 py-2.5 rounded-lg transition-colors hover-scale-sm">
+      <a href="#download" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-2.5 rounded-lg transition-colors hover-scale-sm">
         Try n8nManager
       </a>
     </nav>
-    <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-gray-medium hover:bg-secondary-2 focus:outline-none focus:ring-2 focus:ring-accent-1 relative z-50" aria-label="開啟選單" aria-expanded="false">
+    <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 relative z-50" aria-label="開啟選單" aria-expanded="false">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
@@ -147,35 +111,26 @@
   <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden hidden"></div>
 
   <!-- Mobile Menu Panel -->
-  <div id="mobile-menu-panel" class="fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-primary shadow-2xl z-40 md:hidden transform translate-x-full transition-transform duration-300">
+  <div id="mobile-menu-panel" class="fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-white shadow-2xl z-40 md:hidden transform translate-x-full transition-transform duration-300">
     <nav class="flex flex-col h-full pt-20 px-6" aria-label="移動端導航">
       <div class="flex flex-col space-y-2">
-        <a href="changelog.html" class="text-gray-light hover:text-accent-1 hover:bg-secondary-1 font-semibold py-4 px-4 rounded-lg transition-colors block">
+        <a href="changelog.html" class="text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 font-semibold py-4 px-4 rounded-lg transition-colors block">
           <span class="text-base">更新日誌</span>
         </a>
-        <a href="privacy.html" class="text-gray-light hover:text-accent-1 hover:bg-secondary-1 font-semibold py-4 px-4 rounded-lg transition-colors block">
+        <a href="privacy.html" class="text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 font-semibold py-4 px-4 rounded-lg transition-colors block">
           <span class="text-base">隱私權政策</span>
         </a>
-        <a href="index.html#download" class="bg-accent-1 hover:bg-accent-2 text-white font-bold py-4 px-4 rounded-lg transition-colors block text-center">
+        <a href="#download" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-4 rounded-lg transition-colors block text-center">
           <span class="text-base">Try it</span>
         </a>
-        <!-- 移動版主題切換按鈕 -->
-        <button id="theme-toggle-mobile" class="text-gray-light hover:text-accent-1 hover:bg-secondary-1 font-semibold py-4 px-4 rounded-lg transition-colors flex items-center justify-between" aria-label="切換主題" onclick="document.getElementById('theme-toggle').click()">
-          <span class="text-base">切換主題</span>
-          <div class="flex items-center">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-          </div>
-        </button>
       </div>
 
-      <div class="mt-auto mb-8 pt-8 border-t border-custom">
+      <div class="mt-auto mb-8 pt-8 border-t border-slate-200">
         <div class="flex items-center space-x-3 px-4">
           <img src="images/icon.png" alt="n8nManager" width="40" height="40" class="rounded-lg">
           <div>
-            <p class="text-sm font-bold text-light">n8nManager</p>
-            <p class="text-xs text-gray-medium">行動工作流程監控</p>
+            <p class="text-sm font-bold text-slate-800">n8nManager</p>
+            <p class="text-xs text-slate-500">行動工作流程監控</p>
           </div>
         </div>
       </div>
@@ -184,33 +139,33 @@
 
   <!-- Main Content -->
   <div class="py-8 px-4 sm:px-6 md:px-8 animate-fade-in">
-    <div class="max-w-4xl mx-auto bg-primary rounded-lg shadow-lg p-8">
-      <h1 class="text-4xl font-bold text-light text-center mb-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+      <h1 class="text-4xl font-bold text-gray-900 text-center mb-4">
         更新日誌
       </h1>
-      <p class="text-sm text-gray-medium text-center mb-8">
+      <p class="text-sm text-gray-500 text-center mb-8">
         追蹤 n8nManager 的每一次進化
       </p>
 
       <!-- Changelog List -->
       <div id="changelog-list" class="space-y-4">
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="true">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="true">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
-                  v1.1.0
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
+                  v1.1.1
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
-                  2025年12月3日
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
+                  2025年12月22日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">新增使用者引導與優化首次體驗</h2>
+              <h2 class="text-2xl font-bold text-slate-800">提升工作效率：新增執行紀錄重試功能</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300" style="transform: rotate(180deg);">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -219,7 +174,40 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
+            <div class="changelog-content space-y-6">
+              <p>我們很高興地宣布，本次更新為您帶來了全新的「執行紀錄重試」功能。現在，當您的工作流程執行紀錄不幸失敗時，您可以直接進行重試，無需重新設定，大幅提升您的工作效率與便利性，確保所有任務都能順利完成。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
+        <!-- Accordion Header -->
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
+          <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-5 flex-1">
+              <div class="flex items-center gap-2">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
+                  v1.1.0
+                </span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
+                  2025年12月3日
+                </span>
+              </div>
+              <h2 class="text-2xl font-bold text-slate-800">新增使用者引導與優化首次體驗</h2>
+            </div>
+            <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
+        </button>
+
+        <!-- Accordion Content -->
+        <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>我們很高興推出本次更新，旨在讓您的 App 使用體驗更加流暢與直觀！</p>
 <p><strong>✨ 全新使用者引導系統</strong><br />
@@ -233,23 +221,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v1.0.0
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年11月14日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">全新主題切換功能與視覺體驗優化</h2>
+              <h2 class="text-2xl font-bold text-slate-800">全新主題切換功能與視覺體驗優化</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -258,7 +246,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>我們很高興地宣布，本次更新帶來了全新的視覺體驗！</p>
 <p>現在，您可以根據個人喜好或環境光線，在「設定」頁面中自由切換應用程式的顯示主題。我們提供了「深色模式」、「淺色模式」以及「跟隨系統設定」三種選項，讓您的使用介面更加舒適。</p>
@@ -268,23 +256,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.12.0
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年11月3日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">全新應用程式導覽與多語言支援</h2>
+              <h2 class="text-2xl font-bold text-slate-800">全新應用程式導覽與多語言支援</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -293,7 +281,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>我們很高興地宣布本次更新帶來了全新的應用程式導覽功能，旨在幫助您更輕鬆地探索與掌握 App 的各項強大功能！</p>
 <ul>
@@ -307,23 +295,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.11.0
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年10月6日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">執行記錄管理與隱私權完善</h2>
+              <h2 class="text-2xl font-bold text-slate-800">執行記錄管理與隱私權完善</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -332,7 +320,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新首次加入了免責聲明與隱私權政策頁面，確保你在使用前能清楚了解相關資訊，並持續改善該頁面的閱讀體驗。在執行記錄管理方面，我們新增了批量刪除、單獨刪除及時間篩選等功能，讓你能更有效率地管理大量的執行記錄。無論是清理舊資料或是搜尋特定時段的記錄，現在都變得更加輕鬆便利。</p>
 <p>此外，我們也優化了批量刪除介面的操作流程，改善了刪除記錄後的介面導航，並提升了時間篩選介面的使用者體驗。在應用程式整體穩定性方面，強化了工作流程資料驗證機制、改善了連線設定的錯誤處理，並增強了異常處理能力。同時也提升了多語言支援的精確度，並修復了時間篩選介面顯示寬度異常的問題。</p>
@@ -341,23 +329,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.10.0
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年10月1日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">工作流程詳細資訊與效能提升</h2>
+              <h2 class="text-2xl font-bold text-slate-800">工作流程詳細資訊與效能提升</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -366,7 +354,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新帶來了全新的工作流程詳細資訊頁面，讓你可以查看工作流程的完整設定和執行歷史統計，更清楚掌握每個工作流程的運作狀況。我們也全面改進了深色模式的視覺體驗，調整色彩對比度，大幅降低長時間使用時的眼睛疲勞感。此外，執行記錄列表現在支援關鍵字搜尋功能，讓你能快速找到特定的執行記錄。</p>
 <p>在效能方面，我們改善了與 n8n 伺服器的連線穩定性，減少連線逾時的發生機率，並優化了大量執行記錄的記憶體使用，提升應用程式整體流暢度。同時也修正了部分裝置上工作流程狀態顯示不正確的問題，以及執行記錄載入時偶發的閃退問題，讓你的使用體驗更加穩定順暢。</p>
@@ -375,23 +363,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.9.0
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年9月14日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">廣告體驗優化與效能提升</h2>
+              <h2 class="text-2xl font-bold text-slate-800">廣告體驗優化與效能提升</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -400,7 +388,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>我們對應用程式內的廣告系統進行了優化，移除了全螢幕插頁式廣告，讓您的使用體驗更加流暢，減少了中斷。現在，您將會更快地進入應用程式主頁面，享受更無縫的導航體驗。原有的橫幅廣告將維持不變，以繼續支持我們的服務。</p>
             </div>
@@ -408,23 +396,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.8.3
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年8月1日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">應用程式穩定性更新</h2>
+              <h2 class="text-2xl font-bold text-slate-800">應用程式穩定性更新</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -433,7 +421,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>我們修復了一個內部問題，有效提升了應用程式的穩定性，讓您的使用體驗更加順暢。</p>
             </div>
@@ -441,23 +429,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.8.2
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年7月30日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">應用程式穩定性與網路連線優化</h2>
+              <h2 class="text-2xl font-bold text-slate-800">應用程式穩定性與網路連線優化</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -466,7 +454,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>我們進行了內部優化，以確保應用程式的網路連線功能更加穩定可靠，提供您更順暢的使用體驗。</p>
             </div>
@@ -474,23 +462,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.8.1
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年7月30日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">應用程式穩定性改善</h2>
+              <h2 class="text-2xl font-bold text-slate-800">應用程式穩定性改善</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -499,7 +487,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新主要針對應用程式的穩定性進行了完善。我們修復了在應用程式正式版本中可能出現的網路連線功能異常，確保您在各種執行環境下都能正常使用無線網路連線功能，提升整體的應用穩定性與可靠度。</p>
             </div>
@@ -507,23 +495,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.8.0
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年7月30日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">伺服器連線設定與 Wi-Fi 網路管理</h2>
+              <h2 class="text-2xl font-bold text-slate-800">伺服器連線設定與 Wi-Fi 網路管理</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -532,7 +520,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新加強了應用程式與伺服器連線的設定功能。我們在設定頁面新增了外部與內部伺服器網址的設定選項，讓您能根據不同的使用環境靈活配置連線位址，更好地滿足各種部署場景的需求。</p>
 <p>此外，我們完成了 Wi-Fi 網路清單的連線管理功能，讓您能更直覺地瀏覽並選擇可用的無線網路。這些改進使得應用程式在網路連線設定上提供了更完整、更易用的體驗。</p>
@@ -541,23 +529,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.7.5
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年7月23日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">網路狀態檢測與錯誤提示優化</h2>
+              <h2 class="text-2xl font-bold text-slate-800">網路狀態檢測與錯誤提示優化</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -566,7 +554,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新加強了應用程式在網路相關方面的功能。我們新增了網路狀態檢測機制，應用程式現在能夠即時偵測您的網路連線狀況，並在遇到網路問題時為您顯示清晰的錯誤提示，幫助您快速瞭解問題所在並採取相應的排除措施。</p>
             </div>
@@ -574,23 +562,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.7.4
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年7月16日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">首次設定流程體驗改善</h2>
+              <h2 class="text-2xl font-bold text-slate-800">首次設定流程體驗改善</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -599,7 +587,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新進一步優化了首次設定後的使用體驗。完成伺服器設定後，應用程式現在會直接帶您進入主畫面，避免顯示干擾您的啟動廣告，讓您能更快速、更順暢地開始使用應用程式。</p>
             </div>
@@ -607,23 +595,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.7.3
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月26日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">安全檢查功能上線</h2>
+              <h2 class="text-2xl font-bold text-slate-800">安全檢查功能上線</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -632,7 +620,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新推出了全新的安全檢查功能，幫助您快速瞭解伺服器的安全設定狀態。我們在應用程式的選單中新增了「安全檢查」選項，點擊後您可以檢視詳細的安全審計報告，了解伺服器是否存在任何安全設定問題。</p>
 <p>安全檢查報告會列出任何發現的安全問題，並提供相應的改善建議，讓您能主動掌握伺服器的安全狀況，並根據建議採取必要的防護措施。同時，我們也為這項功能提供了完整的多語言支援，確保您能使用慣用的語言查看所有安全資訊。</p>
@@ -641,23 +629,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.7.2
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月25日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">專案結構優化與程式碼清理</h2>
+              <h2 class="text-2xl font-bold text-slate-800">專案結構優化與程式碼清理</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -666,7 +654,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新主要進行了後臺的結構整理與效能優化，您在日常使用時不會感受到明顯的差異，但這些改善為應用程式的後續開發奠定了更穩固的基礎。</p>
 <p>我們重新整理了程式碼的組織架構，使不同功能的程式碼能更清晰地分類，並移除了不再使用的舊程式碼片段。這些優化提升了應用程式的程式碼品質，確保應用穩定而高效地運行。</p>
@@ -675,23 +663,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.7.1
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月19日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">工作流程節點檢視與多語言優化</h2>
+              <h2 class="text-2xl font-bold text-slate-800">工作流程節點檢視與多語言優化</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -700,7 +688,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新為工作流程功能新增了節點檢視機制，讓您能更細節地了解每個工作流程的組成結構。我們在工作流程詳情頁面新增了一個入口，您可以點擊進入全新的節點列表頁面，清楚查看工作流程中的所有節點資訊、名稱與類型。</p>
 <p>同時，我們也大幅擴充了應用程式的多語言支援。新增了節點檢視相關的語言字串，並為工作流程的各種操作（如啟用、停用、刪除）加上了完整的成功與失敗提示訊息，讓您在使用時能獲得更清晰的回饋。</p>
@@ -709,23 +697,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.7.0
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月18日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">啟動流程與設定體驗優化</h2>
+              <h2 class="text-2xl font-bold text-slate-800">啟動流程與設定體驗優化</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -734,7 +722,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新對應用程式的啟動流程進行了全面重構，改善了首次使用時的體驗。我們優化了初始設定的邏輯，讓應用程式能更聰明地檢查必要的伺服器設定。</p>
 <p>若您首次啟動應用程式尚未設定，應用程式會自動引導您完成設定。若設定過程中遇到連線問題，應用程式也會自動帶您回到設定頁面，讓您輕鬆修正。設定完成後，應用程式會立即進行完整初始化，確保您能順利開始使用所有功能。</p>
@@ -743,23 +731,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.6.1
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月18日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">介面視覺優化與顯示一致性改善</h2>
+              <h2 class="text-2xl font-bold text-slate-800">介面視覺優化與顯示一致性改善</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -768,7 +756,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新針對應用程式的使用者介面進行了細部調整。我們優化了主要頁面的卡片與間距設計，為整體版面帶來更加緊湊而舒適的視覺效果。同時也改善了跨平台的文字顯示一致性，確保所有使用者無論在何種裝置上使用應用程式，都能獲得統一且清晰的閱讀體驗。</p>
             </div>
@@ -776,23 +764,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.6.0
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月18日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">應用程式架構優化與穩定性提升</h2>
+              <h2 class="text-2xl font-bold text-slate-800">應用程式架構優化與穩定性提升</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -801,7 +789,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新著重於應用程式內部的架構最佳化。我們重新設計了工作流程相關的功能組織，將執行紀錄的管理獨立出來，使介面更加清晰易用。這項改進不僅提升了系統的整體穩定性和反應速度，也為未來的功能擴充預留了更好的基礎。使用者在操作工作流程時，將能感受到更順暢且更可靠的應用體驗。</p>
             </div>
@@ -809,23 +797,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.5.1
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月18日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">工作流程列表篩選功能優化</h2>
+              <h2 class="text-2xl font-bold text-slate-800">工作流程列表篩選功能優化</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -834,7 +822,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新為工作流程列表新增了方便的狀態篩選功能，使用者現在可以快速過濾檢視「全部」、「啟用」或「停用」的工作流程。透過改進的篩選介面，提升了工作流程管理的便利性和操作效率。</p>
             </div>
@@ -842,23 +830,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.5.0
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月18日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">新增選單與導航功能</h2>
+              <h2 class="text-2xl font-bold text-slate-800">新增選單與導航功能</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -867,7 +855,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新加入了全新的選單頁面，提供使用者一個集中式的導航介面，方便快速切換至工作流程列表和執行紀錄頁面。同時我們也擴充了多語言支援，確保各地使用者都能獲得最佳的語言體驗。</p>
             </div>
@@ -875,23 +863,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.4.4
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月18日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">關於頁面資訊豐富化</h2>
+              <h2 class="text-2xl font-bold text-slate-800">關於頁面資訊豐富化</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -900,7 +888,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新大幅充實了「關於」頁面的資訊內容。我們為「關於」頁面新增了應用程式的詳細介紹、主要功能說明，讓您能更全面地瞭解應用程式的用途與能力。</p>
 <p>同時，我們也確保所有新增的資訊都提供了完整的多語言版本，包括英文、繁體中文和簡體中文，讓全球使用者都能輕鬆取得應用程式的相關資訊。</p>
@@ -909,23 +897,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.4.3
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月18日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">隱私權政策完整本地化</h2>
+              <h2 class="text-2xl font-bold text-slate-800">隱私權政策完整本地化</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -934,7 +922,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新完善了隱私權政策的呈現與語言支援。我們為隱私權政策頁面編纂了完整的隱私權條款內容，並提供了英文、繁體中文和簡體中文的完整本地化版本，確保各語言的使用者都能清楚瞭解應用程式如何保護您的隱私。</p>
 <p>所有隱私相關的資訊現已涵蓋多種語言，讓您能以最熟悉的語言閱讀並理解應用程式的隱私保護政策。</p>
@@ -943,23 +931,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.4.2
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月18日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">國際化支援完整上線</h2>
+              <h2 class="text-2xl font-bold text-slate-800">國際化支援完整上線</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -968,7 +956,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新賦予應用程式完整的多語言能力。應用程式現已全面支援英文、繁體中文和簡體中文三種語言，讓全球不同地區的使用者都能以自己慣用的語言操作應用程式。</p>
 <p>無論您的系統設定為何種語言，應用程式將自動適配您的語言偏好，為您提供最舒適的使用體驗。</p>
@@ -977,23 +965,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.4.1
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月18日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">設定功能與外部連結支援擴展</h2>
+              <h2 class="text-2xl font-bold text-slate-800">設定功能與外部連結支援擴展</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -1002,7 +990,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新顯著擴充了應用程式的設定功能與資訊揭露。我們新增了「關於」頁面，讓您能瞭解應用程式的詳細資訊，新增了「應用程式設定」頁面以管理應用相關選項，並加入了「隱私權政策」頁面，確保您在使用應用程式前能充分瞭解相關條款。</p>
 <p>同時，我們也為應用程式增強了開啟外部連結的能力，您現在可以輕鬆從應用程式內部存取隱私權政策、官方網站等外部資源，提升了應用程式的易用性與資訊透明度。</p>
@@ -1011,23 +999,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.4.0
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月18日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">統一設定中心上線</h2>
+              <h2 class="text-2xl font-bold text-slate-800">統一設定中心上線</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -1036,7 +1024,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新引入了全新的設定中心，為應用程式的配置管理奠定基礎。我們新建了一個集中的設定頁面，未來將在此處統一管理應用程式的各項設定選項，讓您能更輕鬆地自訂應用程式的使用體驗。</p>
             </div>
@@ -1044,23 +1032,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.3.2
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月18日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">應用程式資料管理架構完善</h2>
+              <h2 class="text-2xl font-bold text-slate-800">應用程式資料管理架構完善</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -1069,7 +1057,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新改進了應用程式內部的資料管理架構，提升了應用程式的穩定性和效能。</p>
 <p>我們建立了一套完整的資料管理機制，用於統一管理來自工作流程執行系統的各項資訊。這項改進讓應用程式能更有效率地處理資料快取和分發，進而減少不必要的重複請求，降低應用程式的負擔，同時提升了整體的運行效能。</p>
@@ -1078,23 +1066,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.3.1
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月18日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">執行記錄取得與資料統計準確度提升</h2>
+              <h2 class="text-2xl font-bold text-slate-800">執行記錄取得與資料統計準確度提升</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -1103,7 +1091,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新強化了執行記錄的資料取得機制和統計精確度，讓你能獲得更完整且準確的執行歷史資訊。</p>
 <p>我們改進了執行記錄的分頁取得機制，確保應用程式能夠完整擷取所有的執行記錄，即使工作流程已執行數百次也不會遺漏任何資料。同時，執行記錄的統計功能也變得更加可靠，無論是查詢特定工作流程的執行次數，或是統計各個執行狀態的數量，現在都能提供準確的結果。</p>
@@ -1113,23 +1101,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.3.0
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月17日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">工作流程詳情頁面與執行效能優化</h2>
+              <h2 class="text-2xl font-bold text-slate-800">工作流程詳情頁面與執行效能優化</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -1138,7 +1126,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>本次更新針對工作流程詳情頁面進行了全面的視覺和功能優化，提升了應用程式的易用性和反應速度。</p>
 <p>在介面設計方面，我們重新整理了頁面配置，讓執行記錄能更自然地融入整體檢視，工作流程名稱現在會動態顯示在頁面上方，刪除選項也被移至更容易取用的位置。執行記錄的篩選方式也經過改進，讓使用者能更直覺地進行操作和篩選。</p>
@@ -1148,23 +1136,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.2.4
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月17日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">執行記錄篩選與視覺改善</h2>
+              <h2 class="text-2xl font-bold text-slate-800">執行記錄篩選與視覺改善</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -1173,7 +1161,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>我們在執行紀錄清單頁面新增了按狀態篩選的功能，讓您可以輕鬆篩選成功或失敗的執行記錄，快速找到您需要的資訊。</p>
 <p>同時，我們也改進了執行紀錄的呈現方式。現在清單會顯示工作流程的名稱而非 ID，使用帶有圖示和顏色的狀態標籤，讓您一眼就能清楚了解每筆執行的狀態，提升了整體的使用體驗和可讀性。</p>
@@ -1182,23 +1170,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.2.3
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月17日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">執行記錄載入優化</h2>
+              <h2 class="text-2xl font-bold text-slate-800">執行記錄載入優化</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -1207,7 +1195,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>這個版本改善了執行紀錄的載入機制，現在應用可以更穩定且完整地載入大量的執行記錄數據，確保您不會遺漏任何重要的紀錄資訊。</p>
             </div>
@@ -1215,23 +1203,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.2.2
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月17日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">啟動頁面與執行詳細資訊</h2>
+              <h2 class="text-2xl font-bold text-slate-800">啟動頁面與執行詳細資訊</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -1240,7 +1228,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>我們新增了應用程式啟動頁面，會在您打開應用時自動檢查伺服器連線狀態，並根據連線結果引導您到相應的頁面，確保應用在最佳狀態下運行。</p>
 <p>同時，我們推出了執行紀錄詳細資訊頁面。現在您可以點擊任何執行紀錄項目，查看該筆執行的完整資訊，包含所有細節與記錄數據。</p>
@@ -1249,23 +1237,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.2.1
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月17日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">快速重新整理功能</h2>
+              <h2 class="text-2xl font-bold text-slate-800">快速重新整理功能</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -1274,7 +1262,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>這個版本在儀表板、工作流程清單和執行紀錄頁面都新增了快速重新整理按鈕。現在您可以隨時點擊這些按鈕，立即刷新最新的資訊，確保您看到的數據始終是最新的。</p>
             </div>
@@ -1282,23 +1270,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.2.0
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月17日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">完整儀表板與工作流程監控</h2>
+              <h2 class="text-2xl font-bold text-slate-800">完整儀表板與工作流程監控</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -1307,7 +1295,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>這個版本為您引入了全新的應用程式首次啟動流程與導航系統，讓您能更輕鬆地開始使用。</p>
 <p>我們推出了全新的儀表板功能，您可以一覽所有重要的應用統計資訊。儀表板會顯示您的總執行次數、工作流程總數以及應用程式的使用者統計，並透過圓形圖表直觀呈現執行的成功與失敗情況。同時，您也能看到過去七天的執行趨勢，幫助您掌握應用的使用狀況。</p>
@@ -1317,23 +1305,23 @@
         </div>
       </div>
 
-      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-secondary-1 border border-custom">
+      <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white border border-slate-200">
         <!-- Accordion Header -->
-        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-secondary-2" aria-expanded="false">
+        <button class="changelog-button w-full p-6 text-left transition-colors duration-200 focus:outline-none hover:bg-slate-50" aria-expanded="false">
           <div class="flex items-center justify-between">
             <div class="flex flex-col gap-5 flex-1">
               <div class="flex items-center gap-2">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent-1/20 text-accent-1">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700">
                   v0.1.0
                 </span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary-2 text-gray-medium">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">
                   2025年6月17日
                 </span>
               </div>
-              <h2 class="text-2xl font-bold text-light">首個版本發行 - 完整的工作流程管理與監控解決方案</h2>
+              <h2 class="text-2xl font-bold text-slate-800">首個版本發行 - 完整的工作流程管理與監控解決方案</h2>
             </div>
             <div class="changelog-icon flex-shrink-0 ml-4 transform transition-transform duration-300">
-              <svg class="w-6 h-6 text-accent-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </div>
@@ -1342,7 +1330,7 @@
 
         <!-- Accordion Content -->
         <div class="changelog-answer overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
-          <div class="bg-secondary-2 px-8 py-8 border-t border-custom">
+          <div class="bg-gradient-to-r from-slate-50 to-slate-100 px-8 py-8 border-t border-slate-200">
             <div class="changelog-content space-y-6">
               <p>我們很高興推出首個版本，這是一個功能完整的應用程式，讓您能夠輕鬆連接、管理和監控您的自動化工作流程。</p>
 <p>新增功能</p>
@@ -1368,66 +1356,16 @@
   </div>
 
   <!-- Footer -->
-  <footer class="py-12 mt-8 border-t border-custom">
+  <footer class="text-slate-600 py-8 text-center text-sm mt-8">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-        <!-- 左欄：品牌資訊 -->
-        <div class="flex flex-col items-center md:items-start">
-          <div class="flex items-center space-x-3 mb-3">
-            <img src="images/icon.png" alt="n8nManager Logo" width="40" height="40" class="rounded-lg">
-            <span class="text-xl font-semibold text-light">n8nManager</span>
-          </div>
-          <p class="text-gray-medium text-sm text-center md:text-left">
-            隨時隨地，掌控您的 n8n 自動化工作流程
-          </p>
-        </div>
-
-        <!-- 中欄：產品連結 -->
-        <div class="text-center md:text-left">
-          <h4 class="text-light font-semibold mb-4">n8nManager 的資訊</h4>
-          <ul class="space-y-2 text-sm">
-            <li>
-              <a href="index.html#features" class="text-gray-medium hover:text-accent-1 transition-colors">功能介紹</a>
-            </li>
-            <li>
-              <a href="changelog.html" class="text-gray-medium hover:text-accent-1 transition-colors">更新日誌</a>
-            </li>
-            <li>
-              <a href="index.html#faq" class="text-gray-medium hover:text-accent-1 transition-colors">常見問題</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- 右欄：其他資源 -->
-        <div class="text-center md:text-left">
-          <h4 class="text-light font-semibold mb-4">法蘭克的其他資源</h4>
-                    <ul class="space-y-2 text-sm">
-            <li>
-              <a href="https://www.frankchen.tw/" target="_blank" rel="noopener noreferrer"
-                class="text-gray-medium hover:text-accent-1 transition-colors">首頁</a>
-            </li>
-            <li>
-              <a href="https://www.frankchen.tw/n8n-resources/" target="_blank" rel="noopener noreferrer"
-                class="text-gray-medium hover:text-accent-1 transition-colors">n8n 教學</a>
-            </li>
-            <li>
-              <a href="https://www.frankchen.tw/personal/" target="_blank" rel="noopener noreferrer"
-                class="text-gray-medium hover:text-accent-1 transition-colors">關於我</a>
-            </li>
-            <li>
-              <a href="https://www.frankchen.tw/contact-frank/" target="_blank" rel="noopener noreferrer"
-                class="text-gray-medium hover:text-accent-1 transition-colors">聯絡我</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 底部版權 -->
-      <div class="mt-10 pt-6 border-t border-custom text-center">
-        <p class="text-gray-medium text-sm">
-          &copy; 2025 法蘭克 All rights reserved.
-        </p>
-      </div>
+      <p class="text-slate-500">
+        Copyright &copy; 2025 n8nManager. All rights reserved.
+      </p>
+      <p class="mt-3">
+        <a href="privacy.html" class="text-indigo-600 hover:text-indigo-700 font-medium transition-colors">
+          隱私權政策
+        </a>
+      </p>
     </div>
   </footer>
   </div>
