@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.frankchen.tw/n8nmanager/sitemap.xml
+Sitemap: https://n8nmanager.frankchen.tw/sitemap.xml
