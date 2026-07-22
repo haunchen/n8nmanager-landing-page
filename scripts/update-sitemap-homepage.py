@@ -34,7 +34,7 @@ def update_sitemap(sitemap_file, homepage_date):
         homepage_updated = False
         for url in root.findall('sm:url', ns):
             loc = url.find('sm:loc', ns)
-            if loc is not None and loc.text.endswith('/n8nmanager'):
+            if loc is not None and loc.text.endswith('n8nmanager.frankchen.tw'):
                 lastmod = url.find('sm:lastmod', ns)
                 if lastmod is not None:
                     old_date = lastmod.text
